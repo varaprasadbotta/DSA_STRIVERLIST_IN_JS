@@ -17,15 +17,34 @@ function bruteForce(arr, N, M, target) {
   return false;
 }
 
+function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (arr[mid] === target) {
+      return true;
+    } else if (arr[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return false;
+}
+
 function betterApproach(arr, N, M, target) {
   for (let i = 0; i < N; i++) {
     if (arr[i][0] <= target && target <= arr[i][M - 1]) {
-      let row = arr[i];
-      for (let j = 0; j < M; j++) {
-        if (row[j] === target) {
-          return true;
-        }
-      }
+      // you can do this one also but this is linear search will take 0(n)
+      //   let row = arr[i];
+      //   for (let j = 0; j < M; j++) {
+      //     if (row[j] === target) {
+      //       return true;
+      //     }
+      //   }
+      // so that lets go with binary search for paticular array if satisfies conditaion
+      return binarySearch(arr[i], target);
     }
   }
   return false;
