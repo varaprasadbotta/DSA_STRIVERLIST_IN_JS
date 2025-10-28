@@ -17,3 +17,10 @@ function selectionSort(nums) {
 let nums = [7, 4, 1, 5, 3];
 let result = selectionSort(nums);
 console.log(result); //  [ 1, 3, 4, 5, 7 ]
+
+/**
+ *  In Selection sort
+ *        -> find the smallest element in the array.
+ *        -> Swap it with First element
+ *
+ */
