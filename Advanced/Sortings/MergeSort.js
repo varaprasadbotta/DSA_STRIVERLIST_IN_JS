@@ -39,3 +39,10 @@ function merge(nums, low, mid, high) {
     nums[i] = temp[i - low];
   }
 }
+
+/**
+ *
+ *  Merge Sort
+ *      -> divide and merge
+ *
+ */
